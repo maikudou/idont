@@ -1,5 +1,5 @@
 # idont
-"I don't do something and wherefore I am better than thou" mocking service
+"I don't do something and therefore I am better than thou" mocking service
 
 [http://idont.maikudou.net#en](http://idont.maikudou.net#en)
 
