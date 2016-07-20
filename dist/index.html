@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I don't</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        html {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100%;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        #starText {
+            color: rgb(41, 47, 51);
+            display: block;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 26px;
+            font-weight: 300;
+            letter-spacing: 0.25999999046325684px;
+            line-height: 32px;
+            text-align: left;
+            white-space: pre-wrap;
+            width: 505.984375px;
+            word-wrap: break-word;
+            resize: none;
+            border: 0;
+            height: 200px;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+        button {
+            cursor: pointer;
+            width: 200px;
+            height: 40px;
+        }
+        p {
+            color: rgba(41, 47, 51, 0.5);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            margin: 2em 0 0 0;
+        }
+        p a {
+            color: rgba(41, 47, 51, 0.5);
+        }
+        p#variants {
+            color: rgba(41, 47, 51, 0.3);
+            margin-top: 1em;
+        }
+        .fb-like {
+            margin-top: 2em;
+            text-align: center;
+        }
+        nav {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            margin: 0 0 1em;
+        }
+        nav a {
+            color: rgba(41, 47, 51, 0.5);
+        }
+    </style>
+    <script type="text/javascript" src="idont.js"></script>
+</head>
+<body>
+    <nav><a href="#">RU</a> <a href="#en">EN</a></nav>
+    <textarea id="starText" readonly="readonly"></textarea>
+    <button id="button" onclick="update()">Еще!</button>
+    <p>Inspired by <a href="https://twitter.com/alta1r/status/753629579491872768">classic</a> and a <a href="https://www.facebook.com/GameOfThronesASOIAF/photos/a.161819403998674.1073741828.161813550665926/611161579064452/?type=3&amp;theater">runner up</a></p>
+    <div class="fb-like" data-href="http://idont.maikudou.net" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+    <!-- <p id="variants"></p> -->
+    <script type="text/javascript">
+        // document.getElementById('variants').innerHTML = Math.pow(idonts.length, 7)+' variants';
+        function update(){
+            document.getElementById('starText').innerHTML = getString(getRandom())
+        }
+        document.getElementById('starText').innerHTML = getStartString();
+        document.getElementById('button').innerText = window['buttonString'+getLang()]
+        window.onhashchange = function (){
+            document.getElementById('starText').innerHTML = getStartString();
+            document.getElementById('button').innerText = window['buttonString'+getLang()]
+        }
+    </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1738466409726517";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
